@@ -33,16 +33,28 @@ class GameBoard:
 		"""Returns the number of columns"""
 		return self.columns
 
-	def get_row(self, row):
-		"""Returns a list containing each element in row"""
-		return self.board[row]
+	def get_row(self, row, return_form="string"):
+		"""Returns a list containing each element in row.
+		return_form designates return type: "list" or default "string" """
+		if return_form == "list":
+			return self.board[row]
+		else:
+			string_row = ""
+			for i in self.board[row]:
+				string_row += i
+			return string_row
 
-	def get_column(self, column):
-		"""Returns a list containing each element in column"""
-		col = []
+	def get_column(self, column, return_form="string"):
+		"""Returns a list containing each element in column.
+		return_form designates return type: "list" or default "string" """
+		col = ""
 		for i in range(0, self.rows):
-			col.append(self.board[i][column])
-		return col
+			col += (self.board[i][column])
+
+		if return_form == "list":
+			return list(col)
+		else:
+			return col
 
 	def get_diagonal(self, row, column, direction="ur", return_form="string"):
 		"""Returns a list or string containing each element in a diagonal direction starting at the row, column

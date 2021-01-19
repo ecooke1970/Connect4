@@ -24,6 +24,8 @@ class Connect4:
             else:
                 column = int(input("Player 2 choose a column: "))
 
+            column -= 1
+
             valid_move = False
             place_found = False
             i = 5
