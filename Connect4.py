@@ -69,14 +69,19 @@ class Connect4:
                     self.winner = check_for_winner(self.board, self.player)
 
                 if not self.winner:
-                    if self.player == 'X':
+                    if self.moves > 41:
+                        self.player = 'T'
+                        self.winner = True
+                    elif self.player == 'X':
                         self.player = 'Y'
                     else:
                         self.player = 'X'
 
         self.board.print_board()
         print("Game Over")
-        if self.player == "X":
+        if self.player == 'T':
+            print("The game is a tie")
+        elif self.player == "X":
             print("The winner is player 1")
         else:
             print("The winner is player 2")
