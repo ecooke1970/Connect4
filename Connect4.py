@@ -39,7 +39,7 @@ class Connect4:
         self.winner = False
 
     def play(self):
-        print("Welcome to Connect 4")
+        print("\nWelcome to Connect 4")
 
         while not self.winner:
             self.board.print_board()
@@ -68,6 +68,7 @@ class Connect4:
                 if self.moves > 6:
                     self.winner = check_for_winner(self.board, self.player)
 
+                # if no winner, check if board is full, if not switch players
                 if not self.winner:
                     if self.moves > 41:
                         self.player = 'T'
