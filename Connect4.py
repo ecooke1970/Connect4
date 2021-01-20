@@ -65,7 +65,8 @@ class Connect4:
             if valid_move:
                 self.moves += 1
                 self.board.set_position(self.player, i, column)
-                self.winner = check_for_winner(self.board, self.player)
+                if self.moves > 6:
+                    self.winner = check_for_winner(self.board, self.player)
 
                 if not self.winner:
                     if self.player == 'X':
