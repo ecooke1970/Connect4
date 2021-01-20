@@ -8,6 +8,5 @@ def main():
     game = Connect4()
     game.play()
 
-
 if __name__ == "__main__":
     main()
