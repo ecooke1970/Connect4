@@ -22,8 +22,10 @@ def main():
 
     top_frame = tk.Frame(window).pack()
     bottom_frame = tk.Frame(window).pack(side="bottom")
-    btn1 = tk.Button(top_frame, text="Connect 4", fg="green", command=run_connect4).pack()
-    btn2 = tk.Button(bottom_frame, text="Exit", fg="red").pack()
+    btn1 = tk.Button(top_frame, text="Connect 4", fg="green", command=run_connect4)
+    btn2 = tk.Button(bottom_frame, text="Exit", fg="red")
+    btn1.pack()
+    btn2.pack()
 
     window.mainloop()
 

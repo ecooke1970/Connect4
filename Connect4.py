@@ -1,7 +1,7 @@
 # Author: Erik Cooke
 
 from GameBoard import GameBoard
-from tkinter import *
+# from tkinter import *
 import tkinter as tk
 
 
@@ -36,8 +36,16 @@ def check_for_winner(board, player):
 def draw_board():
     board = tk.Tk()
     board.title("Connect 4")
-    my_canvas = tk.Canvas(board, bg="blue", height=500, width=500)
+
+    top_frame = tk.Frame(board)
+    my_label = tk.Label(top_frame, text="Hello")
+    top_frame.grid(row=0)
+    my_label.pack()
+
+    bottom_frame = tk.Frame(board)
+    my_canvas = tk.Canvas(bottom_frame, bg="blue", height=500, width=500)
     my_canvas.create_oval(0, 0, 100, 100, fill="red")
+    bottom_frame.grid(row=1)
     my_canvas.grid()
 
     board.mainloop()
