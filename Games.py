@@ -1,6 +1,7 @@
 # author: Erik Cooke
 
 from Connect4 import Connect4
+import tkinter as tk
 
 
 def print_menu():
@@ -10,7 +11,22 @@ def print_menu():
     print("9. Exit")
 
 
+def run_connect4():
+    game = Connect4()
+    game.play()
+
+
 def main():
+    window = tk.Tk()
+    window.title("Games Menu")
+
+    top_frame = tk.Frame(window).pack()
+    bottom_frame = tk.Frame(window).pack(side="bottom")
+    btn1 = tk.Button(top_frame, text="Connect 4", fg="green", command=run_connect4).pack()
+    btn2 = tk.Button(bottom_frame, text="Exit", fg="red").pack()
+
+    window.mainloop()
+
     print_menu()
 
     user_choice = int(input("Your selection: "))
