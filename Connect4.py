@@ -1,6 +1,8 @@
 # Author: Erik Cooke
 
 from GameBoard import GameBoard
+from tkinter import *
+import tkinter as tk
 
 
 def check_for_winner(board, player):
@@ -31,6 +33,16 @@ def check_for_winner(board, player):
     return False
 
 
+def draw_board():
+    board = tk.Tk()
+    board.title("Connect 4")
+    my_canvas = tk.Canvas(board, bg="blue", height=500, width=500)
+    my_canvas.create_oval(0, 0, 100, 100, fill="red")
+    my_canvas.grid()
+
+    board.mainloop()
+
+
 class Connect4:
     def __init__(self):
         self.board = GameBoard(6, 7)
@@ -40,6 +52,8 @@ class Connect4:
 
     def play(self):
         print("\nWelcome to Connect 4")
+
+        draw_board()
 
         while not self.winner:
             self.board.print_board()
