@@ -54,11 +54,11 @@ def draw_board():
     my_btn6.grid(row=0, column=5)
     my_btn7.grid(row=0, column=6)
 
-    # bottom_frame = tk.Frame(board)
-    # my_canvas = tk.Canvas(bottom_frame, bg="blue", height=500, width=500)
-    # my_canvas.create_oval(0, 0, 100, 100, fill="red")
-    # bottom_frame.grid(row=1)
-    # my_canvas.grid()
+    bottom_frame = tk.Frame(board)
+    my_canvas = tk.Canvas(bottom_frame, bg="blue", height=500, width=500)
+    my_canvas.create_oval(0, 0, 100, 100, fill="red")
+    bottom_frame.pack(side="bottom")
+    my_canvas.grid()
 
     board.mainloop()
 
