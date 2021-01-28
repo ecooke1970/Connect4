@@ -2,6 +2,7 @@
 
 from Connect4 import Connect4
 import tkinter as tk
+import sys
 
 
 def print_menu():
@@ -9,6 +10,10 @@ def print_menu():
     print("\nEnter the number of your choice from the  menu")
     print("1. Connect 4")
     print("9. Exit")
+
+
+def game_exit():
+    sys.exit()
 
 
 def run_connect4():
@@ -23,7 +28,7 @@ def main():
     top_frame = tk.Frame(window).pack()
     bottom_frame = tk.Frame(window).pack(side="bottom")
     btn1 = tk.Button(top_frame, text="Connect 4", fg="green", command=run_connect4)
-    btn2 = tk.Button(bottom_frame, text="Exit", fg="red")
+    btn2 = tk.Button(bottom_frame, text="Exit", fg="red", command=game_exit)
     btn1.pack()
     btn2.pack()
 
